@@ -20,5 +20,11 @@ xhr.send()//send가 호출되었을 때 서버에 요청이 간다.
 //JSON.stringify
 //JSON.parse
 console.log(xhr.response);
-console.log(xhr.responseText);//text
-console.log(xhr.responseXML);//xml
+console.log(xhr.responseText);//text- 표준
+const newsList = JSON.parse(xhr.response)
+console.log(newsList[0].title);//첫번째 배열의 뉴스 제목
+console.log(newsList[1].title);//두번째 배열의 뉴스 제목
+console.log(newsList[2].title);//세번째 배열의 뉴스 제목
+console.log(newsList[2].id);//세번째 배열의 뉴스 제목
+//console.log(xhr.responseXML);//xml -> null출력되었다.
+//왜냐하면 응답결과가 json이었다.
