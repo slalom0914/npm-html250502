@@ -9,10 +9,10 @@
       list-style: none;
     }
     li {
-      cursor: pointer;
+      cursor: pointer;/* li태그에 마우스 오버했을 때 손모양으로 커서 변함 */
       padding: 4px;
     }
-    li:hover{
+    li:hover{/* li 오버되었을 때 흰색에서 아쿠아 색상으로 변환 */
       background-color: aqua;
     }
   </style>
@@ -25,8 +25,11 @@
   </ul>
   <script>
     const items = document.querySelectorAll("ul li")
-    items.forEach((li) => {
-      li.addEventListener('click', () => {
+    console.log(typeof items);//출력값은 공식문서에는 NodeList로 되어 있으나 Object출력됨.
+    //items에는 li태그가 세 개 들어 있다.
+    //forEach문 반복문이다. 배열에 있는 모든 원소를 접근할 때 사용함.
+    items.forEach((li) => {//반복문
+      li.addEventListener('click', function(){
         console.log(li.textContent);
       })
     })
