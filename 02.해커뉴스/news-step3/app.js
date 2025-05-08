@@ -23,11 +23,7 @@ window.addEventListener("hashchange",() => {
     //#을 떼어내고 뒤에 id값만 꺼내서 @id치환한다.
     //0번째 자리에는 #이 들어 있으니까 1을 쓴다.
     const id = location.hash.substring(1)
-    //console.log(id);
-    //반복되는 코드가 있다.
-    xhr.open("GET", CONTENT_URL.replace("@id",id), false)
-    xhr.send() 
-    const newsContent = JSON.parse(xhr.responseText)//NodeList
+    const newsContent = getData(CONTENT_URL.replace("@id", id))
     console.log(newsContent);
     //뉴스 제목을 h1태그 안에 작성하세요
     const title = document.createElement("h1")//<h1>
