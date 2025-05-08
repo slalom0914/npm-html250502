@@ -26,13 +26,16 @@ window.addEventListener("hashchange",() => {
     const newsContent = getData(CONTENT_URL.replace("@id", id))
     console.log(newsContent);
     
+    // content div 초기화하면 기존에 있던 뉴스 제목이 사라진다.
+    content.innerHTML = ''
+    
     //뉴스 제목을 h1태그 안에 작성하세요
     const title = document.createElement("h1")//<h1>
     title.innerText = newsContent.title//<h1>뉴스제목</h1>
     console.log(title);
-    
-    // replaceChildren()을 사용하여 이전 내용을 모두 제거하고 새로운 제목만 추가
-    content.replaceChildren(title)
+    //<div id='root'></div>
+    content.appendChild(title)
+
 });//end of hashchange
 
 
@@ -53,15 +56,5 @@ document.querySelector("#root").appendChild(content)
 //console.log(v_root.innerHTML);
 //v_root.innerHTML = "조회결과"
 /*
-이 방법의 장점을 설명드리겠습니다:
-replaceChildren() 메서드는 한 번의 호출로:
-기존의 모든 자식 요소를 제거하고
-새로운 요소를 추가하는 작업을 동시에 수행합니다.
-이전 방법들과 비교했을 때:
-코드가 더 간결합니다
-성능이 더 좋습니다 (DOM 조작이 한 번만 발생)
-가독성이 더 좋습니다
-innerHTML이나 while 루프를 사용하는 것보다 더 현대적이고 효율적인 방법입니다.
-이 방법도 동일하게 새로운 제목을 클릭할 때마다 이전 제목이 사라지고 현재 클릭한 제목만 표시됩니다. 
-세 가지 방법 중에서 이 방법이 가장 간단하고 효율적이라고 할 수 있습니다.
+
 */
