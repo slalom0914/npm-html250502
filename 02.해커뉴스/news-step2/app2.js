@@ -1,6 +1,4 @@
 const xhr = new XMLHttpRequest()
-//제목을 클릭했을 때 제목을 읽어와서 다른 화면에 출력하기
-const content = document.createElement("div")
 const NEWS_URL = "https://api.hnpwa.com/v0/news/1.json"
 const CONTENT_URL = "https://api.hnpwa.com/v0/item/@id.json"
 xhr.open("GET", NEWS_URL, false)
@@ -21,14 +19,8 @@ window.addEventListener("hashchange",() => {
     xhr.send() 
     const newsContent = JSON.parse(xhr.responseText)//NodeList
     console.log(newsContent);
-    //뉴스 제목을 h1태그 안에 작성하세요
-    const title = document.createElement("h1")//<h1>
-    title.innerText = newsContent.title//<h1>뉴스제목</h1>
-    console.log(title);
-    //<div id='root'></div>
-    content.appendChild(title)
-
-});//end of hashchange
+  },
+);
 
 
 for(let i=1;i<=10;i=i+1){
@@ -44,7 +36,6 @@ for(let i=1;i<=10;i=i+1){
 }
 
 const v_root = document.querySelector("#root").appendChild(ul)
-document.querySelector("#root").appendChild(content)
 //console.log(v_root.innerHTML);
 //v_root.innerHTML = "조회결과"
 /*
