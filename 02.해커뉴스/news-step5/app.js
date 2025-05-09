@@ -42,3 +42,17 @@ newsList.push('</ul>')
 console.log(newsList);
 // 빈문자열을 넣어서 배열을 구분자 없는 문자열로 바꾸어주는 함수 이다.
 container.innerHTML = newsList.join('')
+
+/***********************************************************
+ * 라우팅 추가 부분
+ ***********************************************************/
+function router() {
+  const routePath = location.hash
+
+  
+
+}
+//보통은 다음페이지를 클릭하거나 이전 페이지를 클릭했을 때 호출한다.
+window.addEventListener('hashchange', router)
+//최초 한 번 호출을 위해서 추가하기
+//router()
