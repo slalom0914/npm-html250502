@@ -9,7 +9,7 @@
 </head>
 <body>
   <!-- Navbar Start -->
-  <nav class="navbar">
+  <nav id="navbar">
     <!-- LOGO -->
     <div class="navbar-logo">
       <i class="fab fa-diaspora"></i>
@@ -25,8 +25,31 @@
         <li class="navbar-menu-item" data-link="#contact">Contact</li>
       </ul>
     </div>
-
     <!-- 버거 아이콘 -->
+      <div class="burger-toggle-btn">
+        <i class="fas fa-bars"></i>
+      </div>    
+<script>
+  const navbarMenu = document.querySelector(".navbar-menu")
+  const buggerIcon = document.querySelector(".burger-toggle-btn")
+  navbarMenu.addEventListener("click", (event)=>{
+    //console.log('click호출');
+    //console.log(event.target);//이벤트가 감지되었을 때 감지되는 이벤트 타겟 객체 출력
+    console.log(event.target.dataset.link);//#home, #me, #skill
+    const target = event.target
+    const link = target.dataset.link 
+    if(link == null){
+      return;//함수 밖으로 탈출
+    }
+    scrollIntoView(link)
+  })
+  function scrollIntoView(selector){
+    const scrollTo = document.querySelector(selector)
+    scrollTo.scrollIntoView({behavior: "smooth"})
+  }
+</script>
+
+
   </nav>
   <!-- Navbar End   -->
 

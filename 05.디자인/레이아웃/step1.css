@@ -21,7 +21,7 @@ ul{
   padding-left: 0;
 }
 
-.navbar {
+#navbar {
   position: fixed;
   display: flex;
   width: 100%;
@@ -56,6 +56,14 @@ ul{
   background-color: greenyellow;
   color: black;
 }
+/* 버거 아이템 추가 */
+.burger-toggle-btn {
+  display: none;
+  position: absolute;
+  right: 32px;
+  font-size: 24px;
+}
+
 /* section공통 스타일 적용 */
 .section {
   text-align: center;
@@ -90,6 +98,9 @@ ul{
   height: 200px;
   width: 100%;
 }
+#contact {
+  position: relative;
+}
 .contact-links {
   font-size: 48px;
   transition: all 300ms ease-in;
@@ -97,4 +108,26 @@ ul{
 .contact-links i:hover {
   transform: scale(1.1);
   color: rgb(245, 46, 46);
+}
+
+/* 반응형 웹 추가 - 768px보다 작아지면 발동 */
+@media screen and (max-width: 768px) {
+  .burger-toggle-btn {
+    display: block;/* 버거아이템 보이게 */
+  }
+  /* 메뉴바의 내용이 아래방향으로 출력되게 수정 */
+  .navbar {
+    flex-direction: column; /* 메뉴바 내용 아래로 */
+    align-items: flex-start;
+  }
+  .div-menu {
+    position: absolute;
+    top: 50px;
+    width: 100%;/*메뉴아이템이 전체 채움*/
+  }
+  .navbar-menu {
+    flex-direction: column;
+    display: block;
+    text-align: center;
+  }
 }
