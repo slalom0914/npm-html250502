@@ -1,0 +1,100 @@
+* {
+  /* 1.패딩과 마진 포함 사이즈 계산 */
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
+body {
+  /* 2.빈공간 없이 왼쪽 상단 모서리 붙임 */
+  margin: 0;
+}
+
+a {
+  /* 3.밑줄 없애기 */
+  text-decoration: none;
+}
+
+ul{
+  /* 4.li태그 구슬 없애기 */
+  list-style: none;
+  /* 5.왼쪽 내부여백 없애기 */
+  padding-left: 0;
+}
+
+.navbar {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  height: 60px;
+  justify-content: space-between;
+  background-color: green;
+  color: white;
+}
+/* 로고 */
+.navbar-logo {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.navbar-menu {
+  display: flex;
+}
+/* 메뉴 아이템 추가 */
+.navbar-menu-item {
+  padding: 8px 12px;
+  margin: 0 4px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Home버튼 강조 */
+.navbar-menu-item.active {
+  border: 1px solid white;
+}
+
+.navbar-menu-item:hover {
+  background-color: greenyellow;
+  color: black;
+}
+/* section공통 스타일 적용 */
+.section {
+  text-align: center;
+  margin: auto;
+}
+
+.hcontent {
+  background-image: url("../../images/camping-night2.jpg");
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 600px;
+}
+
+.mcontent {
+  background-color: rgb(227, 159, 58);
+  height: 600px;
+  width: 100%;
+}
+.scontent {
+  background-color: rgb(227, 58, 58);
+  height: 600px;
+  width: 100%;
+}
+.pcontent {
+  background-color: rgb(40, 170, 246);
+  height: 600px;
+  width: 100%;
+}
+.ccontent {
+  position: absolute;
+  background-color: rgb(252, 250, 126);
+  height: 200px;
+  width: 100%;
+}
+.contact-links {
+  font-size: 48px;
+  transition: all 300ms ease-in;
+}
+.contact-links i:hover {
+  transform: scale(1.1);
+  color: rgb(245, 46, 46);
+}
