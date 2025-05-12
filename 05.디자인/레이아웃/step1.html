@@ -47,6 +47,9 @@
     const scrollTo = document.querySelector(selector)
     scrollTo.scrollIntoView({behavior: "smooth"})
   }
+  buggerIcon.addEventListener("click", () => {
+    navbarMenu.classList.toggle("open");
+  });  
 </script>
 
 

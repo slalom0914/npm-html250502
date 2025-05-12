@@ -12,6 +12,7 @@ body {
 a {
   /* 3.밑줄 없애기 */
   text-decoration: none;
+  color: white;
 }
 
 ul{
@@ -29,6 +30,7 @@ ul{
   justify-content: space-between;
   background-color: green;
   color: white;
+  align-items: center;
 }
 /* 로고 */
 .navbar-logo {
@@ -94,7 +96,7 @@ ul{
 }
 .ccontent {
   position: absolute;
-  background-color: rgb(252, 250, 126);
+  background-color: rgb(106, 247, 78);
   height: 200px;
   width: 100%;
 }
@@ -127,7 +129,12 @@ ul{
   }
   .navbar-menu {
     flex-direction: column;
-    display: block;
+    display: none;/*반응형 테스트시에만 block두어 확인함*/
     text-align: center;
   }
+  /* 버거아이콘을 누르면 css 추가함 - open */
+  /* 노드주소번지.classList.toggle(open)*/
+  .navbar-menu.open {
+    display: block; /* 6 */
+  }  
 }
