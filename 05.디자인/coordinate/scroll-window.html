@@ -4,6 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+
+  <style>
+    /* DOM Tree -> CSSOM Tree -> Render Tree */
+    body {
+      background-color: black;
+    }
+    div {
+      width: 250px;
+      height: 250px;
+      background-color: aqua;
+      margin-bottom: 4px;
+      border-radius: 4px;
+    }
+    .special {
+      background-color: blueviolet;
+    }
+    aside {
+      position: fixed;
+      top: 20px;
+      right:20px;
+    }
+  </style>
+
 </head>
 <body>
   <div>1</div>
@@ -41,15 +64,17 @@
     const scrollTo = document.querySelector(".scroll-to")
     const scrollInto = document.querySelector(".scroll-into")
     scrollBy.addEventListener('click', () => {
-
+      window.scrollBy({ top: 100, left: 0, behavior: 'smooth' })
     })
-    scrollTo.addEventListener('click', () => {
-
+    scrollTo.addEventListener('click', () => {//y가 100인곳으로 이동함.
+      window.scrollTo(0,100)
     })
     scrollInto.addEventListener('click',() => {
       special.scrollIntoView()
     })
-
+    document.addEventListener('scroll', () => {
+      console.log(window.scrollY);
+    })
 
   </script>
 </body>
