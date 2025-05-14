@@ -12,9 +12,6 @@
     window.addEventListener("load", (event) => {
       init()
     });
-  </script>
-  <ul class="ul"></ul>
-  <script>
     console.log("여기");
     let items = [
       {id:1, name: '벤치프레스', count: 0},
@@ -71,8 +68,33 @@
       ul.innerHTML = lis
     }//end of init
 
+// Add버튼을 클릭했을 때 이벤트 처리
+    const handleAdd = () => {
+      const imsi = document.querySelector(".add-input")
+      const name = imsi.value
+      const workouts = [...items, {id: items.length+1, name:name, count:0}]
+      items = [...workouts]
+      imsi.value = ''
+      init()
+    }
+
 
   </script>
+
+  <div class="navbar">
+      <i class="navbar-logo fas fa-leaf"></i>
+      <span>Workout Tracker</span>
+      <span class="navbar-count">0</span>
+  </div>
+  <div class="workouts">
+      <form class="add-for">
+          <input 
+              type="text" class="add-input" placeholder="운동이름"/>
+          <button type="button" class="add-button" onclick="handleAdd()">Add</button>
+      </form>        
+      <ul class="ul">          
+      </ul>
+  </div>
 
 </body>
 </html>
