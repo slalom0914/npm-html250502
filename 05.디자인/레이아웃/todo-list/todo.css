@@ -6,6 +6,7 @@
 ul {
   /* 2. 기본 패딩과 구슬 없애기 */
   padding: 0;
+  list-style: none;
 }
 
 body {
@@ -25,6 +26,7 @@ button {
   width: 400px;
   background-color: #f1f0f7;
   margin: 30px auto;
+  border-radius: 20px;
 }
 
 .header {

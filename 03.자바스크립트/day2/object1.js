@@ -3,7 +3,7 @@ const userA = {
   name: "강감찬",
   age: 55,
   gender: "남자"
-}
+} 
 const userB = {
   name: "이순신",
   age: 57,
