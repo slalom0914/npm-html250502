@@ -1,3 +1,53 @@
+//우리는 전역변수로 선언하기로 하였다.
+const sampleTodos = [
+  {id: 1, text: '학교가기', completed: true},
+  {id: 2, text: '친구만나기', completed: false},
+  {id: 3, text: '과제제출하기', completed: false},//ES5
+]
+//요구사항이 무엇인지 적어본다.
+//작업순서를 적어본다.
+const loadSampleBtn = document.querySelector('.load_sample_button')
+/*
+loadSampleBtn.addEventListener('click', ()=> {
+  console.log("샘플 데이터 로드 버튼 클릭");
+  //현재 있는 목록을 지우기 - removeChild
+
+  //샘플 데이터 로드 하기 - createItem
+
+})
+*/
+//아래는 버튼을 클릭했을 때 호출할 콜백함수 이다.
+//이번 코드에서는 콜백함수의 재사용성을 위해 분리하여 구현해 본다.
+const getTodoList = () => {
+  console.log("콜백함수");
+  //while문 괄호안에는 참이나 거짓, 또는 참인지 거짓인지 판별하는 식이옴
+  //0은 false
+  //현재 ul태그 아래 li태그가 몇 개인지 알수가 없다.
+  //그래서 for문 대신 while문을 사용함
+  while(items.firstChild){
+    items.removeChild(items.firstChild)
+  }//end of while
+  //기존에 있는 목록을 위에서 지웠으니까 이제는 새로운 샘플 데이터를
+  //가져온다.
+  sampleTodos.forEach(todo => {
+    const item = createItem(todo.text)
+    items.appendChild(item)
+  })
+}//end of getTodoList
+loadSampleBtn.addEventListener('click', getTodoList)
+
+//초기화 버튼 구현하기
+const resetBtn = document.querySelector(".reset_button")
+const deleteAll = () =>{
+  console.log("모두 삭제");
+  while(items.firstChild){
+    items.removeChild(items.firstChild)
+  }//end of while
+}
+resetBtn.addEventListener('click', deleteAll)
+
+
+
 //사용자가 입력하는 콤포넌트 -> input 태그
 const items = document.querySelector(".items") //ul태그야
 
