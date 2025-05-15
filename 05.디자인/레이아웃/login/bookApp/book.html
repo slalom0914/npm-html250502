@@ -10,6 +10,15 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </head>
 <body>
+  <script>
+    window.addEventListener('load',()=>{
+      //localStorage에 이메일값이 있어?
+      const myEmail = localStorage.getItem("email")
+      if(myEmail){//email이 존재한다. 그러면 로그인을 한 사람이다.
+        //로그인은 안보이게 로그아웃은 보이게하고 또 이메일도 출력해준다. - 내일
+      }
+    })
+  </script>
   <div class="container">
     <!--============================ 네비게이션 바 =========================-->
 
@@ -44,10 +53,10 @@
     <li class="nav-item" id="login">
       <a class="nav-link active" aria-current="page" href="#">로그인</a>
     </li>              
-    <li class="nav-item" id="email" style="display: none;">
+    <li class="nav-item" id="email" style="display: inline;">
       <a class="nav-link active" aria-current="page" href="#">현사용자이메일주소</a>
     </li>              
-    <li class="nav-item" id="email" style="display: none;">
+    <li class="nav-item" id="email" style="display: inline;">
       <a class="nav-link active" aria-current="page" href="#">로그아웃</a>
     </li>              
   </ul>
