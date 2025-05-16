@@ -161,6 +161,7 @@
         document.querySelector("#logout").style.display = 'block'
         document.querySelector("#myEmail").style.display = 'block'
         document.querySelector("#myEmail").querySelector("a").textContent = data.user.email
+        location.href = "/05.디자인/레이아웃/login/bookApp/step1/book-step2.html#home"
       })
       .catch((error) => {
         const errorCode = error.code;
