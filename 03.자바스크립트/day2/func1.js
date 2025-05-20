@@ -7,6 +7,7 @@
 // 아래 함수에는 변수의 갯수는 몇개 인가요? - 3개
 // hap의 초기화는 얼마로 해야 할까요?
 function add(a, b){
+  console.log(a);
   //처리를 한다.
   let 합 = a + b
   return 합
@@ -15,3 +16,11 @@ function add(a, b){
 console.log(add(1,2));
 console.log(add(2,3));
 console.log(add(3,4));
+console.log(add());
+//함수 선언시에 파라미터에 초기화가 가능하다.
+//함수 파라미터 자리는 호출이 될 때 값이 결정된다.
+//값에 의한 호출이다.
+function add2(a=1){//a=5
+  console.log(a);
+}
+add2(5)
