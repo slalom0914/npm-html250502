@@ -16,7 +16,7 @@ const handleSearch = (event) => {
 
 const search = (query) => {
   console.log("사용자가 입력한 키워드는 " + query);
-  const SEARCH_URL = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&key=AIzaSyDbwZHD0lH6do9NLsE5uEzftH-nM0ow66A`
+  const SEARCH_URL = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${query}&key=AIzaSyDbwZHD0lH6do9NLsE5uEzftH-nM0ow66A`
 
   xhr.open('GET',SEARCH_URL, false)
   xhr.send()
@@ -30,7 +30,17 @@ const search = (query) => {
   //console.log(vitems);
   videoList.push('<ul class="videos">')
   for(let i=0;i<vitems.length;i++){
-    videoList.push(`<li>${i}</li>`)
+    videoList.push(`<li class="container">`)
+    videoList.push(`<div class="video">`)
+    videoList.push(
+      `<img src="${vitems[i].snippet.thumbnails.medium.url}"></img>`
+    )
+    videoList.push(`<div>`)
+    videoList.push(`<p class="title">${vitems[i].snippet.title}</p>`)
+    videoList.push(`<p class="channel">${vitems[i].snippet.channelTitle}</p>`)
+    videoList.push(`</div>`)
+    videoList.push(`</div>`)
+    videoList.push(`</li>`)
   }//end of for
   videoList.push('</ul>')
   container.innerHTML = videoList.join("")
