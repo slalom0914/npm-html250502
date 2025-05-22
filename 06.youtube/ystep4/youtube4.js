@@ -3,12 +3,9 @@ const container = document.querySelector('#root')
 
 //input type text에서 입력 후 엔터를 쳤을 때
 const handleSearch = (event) => {
-  console.log('onkeypress');
-  console.log(event.keyCode);//13
   if(13 == event.keyCode){
     const keyword = document.querySelector(".input")
     let word = keyword.value
-    console.log('엔터야');
     search(word)
   }
 }
@@ -16,9 +13,7 @@ const handleSearch = (event) => {
 const search = (query) => {
   console.log("사용자가 입력한 키워드는 " + query);
 }//end of search
-//함수 호출하기 - 세미콜론이나 아무것도 안적음
-//함수 선언하기 - {}
-//search('AI')
+
 
 container.innerHTML = '조회결과'
 
